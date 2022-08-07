@@ -2,8 +2,7 @@ ONLINEQUIZ
 
 Introduction:
 
-    Build a web page that can deliver quizzes that a student can take and view their scores 
-afterwards. 
+   Build a web page that can deliver quizzes that a student can take and view their scores afterwards. 
     An administrator should be able to observe the grades of all students.
     The system must contain a set of at least four quizzes divided into two categories, 
         i)  Aptitude and 
