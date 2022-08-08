@@ -41,37 +41,37 @@ export class GradebookComponent implements OnInit {
       })
     }
   }
-  getAllQuestionPaper(){
-    const subcategory = this.activateRoute.snapshot.paramMap.get("subcategory");
-    if(subcategory != null){
+  // getAllQuestionPaper(){
+  //   const subcategory = this.activateRoute.snapshot.paramMap.get("subcategory");
+  //   if(subcategory != null){
       
-      this.service.searchBySubCategory(subcategory).subscribe(data=>{
+  //     this.service.searchBySubCategory(subcategory).subscribe(data=>{
         
-        this.questionPapers = data;
-        console.log(this.questionPapers);
-        for(let index in this.questionPapers){
-          this.service.getAllScoreCard(this.questionPapers[index].paperid, this.service.emailid).subscribe(data=>{
-            this.scorecards = data;
-            console.log(this.scorecards)
-            this.flag = true;
-            console.log(this.flag);
+  //       this.questionPapers = data;
+  //       console.log(this.questionPapers);
+  //       for(let index in this.questionPapers){
+  //         this.service.getAllScoreCard(this.questionPapers[index].paperid, this.service.emailid).subscribe(data=>{
+  //           this.scorecards = data;
+  //           console.log(this.scorecards)
+  //           this.flag = true;
+  //           console.log(this.flag);
             
-          })
-          if(this.flag == true)
-        {  console.log(this.scorecards)
+  //         })
+  //         if(this.flag == true)
+  //       {  console.log(this.scorecards)
         
-          for(let index in this.scorecards){
-            console.log(this.scorecards[index])
-            this.gradebooks.push(this.scorecards[index]);
-            console.log(this.gradebooks);
-          }
-        }
-        }
-      })
+  //         for(let index in this.scorecards){
+  //           console.log(this.scorecards[index])
+  //           this.gradebooks.push(this.scorecards[index]);
+  //           console.log(this.gradebooks);
+  //         }
+  //       }
+  //       }
+  //     })
       
-    }
+  //   }
     
-  }
+  // }
  
   logout(){
     this.service.setUserLoggedOut();

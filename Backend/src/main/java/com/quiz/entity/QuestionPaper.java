@@ -24,18 +24,33 @@ public class QuestionPaper {
 	
 	@Column(name="totalmarks")
 	private Integer totalmarks;
-
+	
+	@Column(name="quizname")
+	private String quizname;
 	public QuestionPaper() {
 	
 	}
 
-	public QuestionPaper(Integer paperid, String category, String subcategory, Integer totalmarks) {
+	
+	public QuestionPaper(Integer paperid, String category, String subcategory, Integer totalmarks, String quizname) {
 		super();
 		this.paperid = paperid;
 		this.category = category;
 		this.subcategory = subcategory;
 		this.totalmarks = totalmarks;
+		this.quizname = quizname;
 	}
+
+	
+	public String getQuizname() {
+		return quizname;
+	}
+
+
+	public void setQuizname(String quizname) {
+		this.quizname = quizname;
+	}
+
 
 	public Integer getPaperid() {
 		return paperid;
@@ -69,11 +84,14 @@ public class QuestionPaper {
 		this.totalmarks = totalmarks;
 	}
 
+
 	@Override
 	public String toString() {
 		return "QuestionPaper [paperid=" + paperid + ", category=" + category + ", subcategory=" + subcategory
-				+ ", totalmarks=" + totalmarks + "]";
+				+ ", totalmarks=" + totalmarks + ", quizname=" + quizname + "]";
 	}
+
+	
 
 	
 	

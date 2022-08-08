@@ -14,6 +14,6 @@ import com.quiz.entity.QuestionsPrimaryData;
 @CrossOrigin("http://localhost:4200/")
 public interface QuestionsRepository extends JpaRepository<Questions, QuestionsPrimaryData>{
 	
-	@Query("from Questions where paperid = paperid")
+	@Query("select s from Questions s where paperid = ?1")
 	public List<Questions> findBypaperid(Integer paperid);
 }

@@ -13,5 +13,7 @@ import com.quiz.entity.Questions;
 @CrossOrigin("http://localhost:4200/")
 public interface QuestionPaperRepository extends JpaRepository<QuestionPaper, Integer>{
 	
-	public List<QuestionPaper> findByCategoryAndSubcategoryContainsAllIgnoreCase(String category, String subcategory);
+	public List<QuestionPaper> findByPaperid(Integer paperid);
+	public List<QuestionPaper> findByCategoryContainsAllIgnoreCase(String category);
+	public List<QuestionPaper> findBySubcategoryContainsAllIgnoreCase(String subcategory);
 }

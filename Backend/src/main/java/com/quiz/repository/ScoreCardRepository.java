@@ -24,4 +24,6 @@ public interface ScoreCardRepository extends JpaRepository<ScoreCard, Integer>{
 	@Query("select s from ScoreCard s where s.paperid = ?1 and s.emailid = ?2 ")
 	public List<ScoreCard> findByPaperidAndEmailId(Integer paperid,String emailid);
 	
+	
+	public List<ScoreCard> findByEmailidAndQuiznameContainsAllIgnoreCase(String emailid,String quizname);
 }

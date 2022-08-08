@@ -1,29 +1,32 @@
-<div class="container" *ngFor="let question of questions">
+
+
+<div  class="container" *ngFor="let question of questions" >
     <div class="container">Q{{question.questionsprimarydata.questionno}}. {{question.question}}</div>
-    <div class="form-check">
+    <div class="form-check" >
         
         <label  class="form-check-label" for="flexRadioDefault1">
-            {{question.optiona}}
+            A  {{question.optiona}}
         </label>
       </div>
       <div class="form-check">
         
         <label  class="form-check-label" for="flexRadioDefault2">
-            {{question.optionb}}
+           B  {{question.optionb}}
         </label>
       </div>
       <div class="form-check">
         
         <label   class="form-check-label" for="flexRadioDefault2">
-            {{question.optionc}}
+          C  {{question.optionc}}
         </label>
       </div>
       <div class="form-check">
         
         <label   class="form-check-label" for="flexRadioDefault2">
-            {{question.optiond}}
+         D   {{question.optiond}}
         </label>
       </div>
+      Choose Option
       <select id="{{question.questionsprimarydata.questionno}}" name = "ans" [(ngModel)]="ans[question.questionsprimarydata.questionno - 1]">
         <option  value="A" >A</option>
         <option  value="B" >B</option>
@@ -32,7 +35,7 @@
       </select>
      
       <div class="form-check">
-      <button class="btn btn-primary" (click)="onSubmit(question.correctoption, question.questionsprimarydata.questionno)">submit</button>
+      <button class="btn btn-primary" (click)="onSubmit(question.correctoption, question.questionsprimarydata.questionno)">Save</button>
       </div>
      &nbsp;
      

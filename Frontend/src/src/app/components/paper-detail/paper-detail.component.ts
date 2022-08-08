@@ -30,10 +30,21 @@ export class PaperDetailComponent implements OnInit {
      })
    }
  }
+ isAlreadyAttempt(paperid : number) {
+  this.service.getAllScoreCard(paperid, this.service.emailid).subscribe(data=>{
+       this.scorecard = data;
+       console.log(this.scorecard);
+  })
+  
+}
 
   attemptQuiz(id : number){
-    
+    this.isAlreadyAttempt(id);
+    if(this.scorecard.length == 0){
     console.log(id);
     this.route.navigateByUrl("/attemptQuiz/" + id)
+    }else{
+      this.route.navigateByUrl("/presentscore/" + id);
+    }
   }
 }

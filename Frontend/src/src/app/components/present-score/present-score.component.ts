@@ -30,4 +30,8 @@ export class PresentScoreComponent implements OnInit {
     this.service.setUserLoggedOut();
     this.route.navigateByUrl("");
   }
+  home(){
+    
+    this.route.navigateByUrl("student");
+  }
 }

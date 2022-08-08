@@ -31,14 +31,19 @@ public class ScoreCard {
 	@Column(name="testdate")
 	private String testdate;
 
-	
+	@Column(name="quizname")
+	private String quizname;
 
 	public ScoreCard() {
 	
 	}
 	
 	
-	public ScoreCard(Integer id, Integer paperid, String emailid, Integer marks, Integer totalmarks, String testdate) {
+	
+
+
+	public ScoreCard(Integer id, Integer paperid, String emailid, Integer marks, Integer totalmarks, String testdate,
+			String quizname) {
 		super();
 		this.id = id;
 		this.paperid = paperid;
@@ -46,7 +51,27 @@ public class ScoreCard {
 		this.marks = marks;
 		this.totalmarks = totalmarks;
 		this.testdate = testdate;
+		this.quizname = quizname;
 	}
+
+
+	
+
+
+	public String getQuizname() {
+		return quizname;
+	}
+
+
+
+
+
+	public void setQuizname(String quizname) {
+		this.quizname = quizname;
+	}
+
+
+
 
 
 	public Integer getId() {
@@ -97,11 +122,15 @@ public class ScoreCard {
 		this.testdate = testdate;
 	}
 
+
+
+
+
 	@Override
 	public String toString() {
 		return "ScoreCard [id=" + id + ", paperid=" + paperid + ", emailid=" + emailid + ", marks=" + marks
-				+ ", totalmarks=" + totalmarks + ", testdate=" + testdate + "]";
+				+ ", totalmarks=" + totalmarks + ", testdate=" + testdate + ", quizname=" + quizname + "]";
 	}
-	
+
 	
 }

@@ -10,19 +10,21 @@ import javax.persistence.Id;
 
 @Embeddable
 public class QuestionsPrimaryData implements Serializable {
-
+    
+	@Column(name="paperid")
 	private Integer paperid;
 	
+	@Column(name="question_no")
 	private Integer question_no;
 
 	public QuestionsPrimaryData() {
 		super();
 	}
 
-	public QuestionsPrimaryData(Integer paperid, Integer questionno) {
+	public QuestionsPrimaryData(Integer paperid, Integer question_no) {
 		super();
 		this.paperid = paperid;
-		this.question_no = questionno;
+		this.question_no = question_no;
 	}
 
 	public Integer getPaperid() {
@@ -37,8 +39,8 @@ public class QuestionsPrimaryData implements Serializable {
 		return question_no;
 	}
 
-	public void setQuestionno(Integer questionno) {
-		this.question_no = questionno;
+	public void setQuestionno(Integer question_no) {
+		this.question_no = question_no;
 	}
 
 	@Override
